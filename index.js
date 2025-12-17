@@ -1,11 +1,9 @@
 const express = require("express"); //importiamo il modulo express installato tramite npm e lo assegniamo alla variabile
 const app = express(); //la funzione express viene utilizzata per creare un'istanza dell'applicazione Express
-const { persone } = require("./persone"); //dall’oggetto esportato, prendiamo solo la proprietà persone e la mettiamo nella variabile persone
+const { persone } = require("./persone"); //dall'oggetto esportato, prendiamo solo la proprietà persone e la mettiamo nella variabile persone
 
 app.use(express.json()); //questo middleware serve per fare POST da postman
 app.use(express.urlencoded({extended: false})); //questo middleware serve per leggere i dati da un form
-
-
 
 //GET: visualizzare tutte le persone
 app.get("/api/persone", (req, res) => {
