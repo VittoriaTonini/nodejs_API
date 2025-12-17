@@ -32,19 +32,22 @@
 </head>
 
 <body>
-  <div>
+<form action="/api/persone" method="POST" id="form">
+  <div> 
     <label for="personid">ID</label>
-    <input type="text" id="personid">
+    <input type="text" id="personid" name="personid">
   </div>
   <div>
     <label for="nome">Nome</label>
-    <input type="text" id="nome">
+    <input type="text" id="nome" name="nome">
   </div>
-    <div>
-    <label for="cognome">Nome</label>
-    <input type="text" id="cognome">
+  <div>
+    <label for="cognome">Cognome</label>
+    <input type="text" id="cognome" name="cognome">
   </div>
-  <button onclick="post()">Cliccami per inserire la persona</button>
+  <button type="submit">Inserisci persona</button>
+</form>
+
 
   <script src="index.js"></script>
 </body>
