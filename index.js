@@ -37,7 +37,14 @@ app.put("api/persone/:id", (res, req) =>{
   const persona = req.body;
   persone[Number(id)-1] = persona;
   res.status(200).json({success: true, data: persone});
-  
+})
+
+//DELETE: rimuovere una persona
+app.delete("/api/persone/:id", (req, res) => {
+  const{id} = req.params;
+  const index = persone.findIndex(persona => persona.id === id);
+  persone.splice(index,1);
+  res.status(200).json({success: true, data: persone});
 })
 
 app.listen(3000);
